@@ -1,0 +1,36 @@
+---
+// layout.astro
+export interface Props {
+  title: string; // Static title for the wrapper
+  content?: any; // Optional MDX/HTML content as a prop
+}
+const { title, content } = Astro.props;
+---
+
+<div class="wrapper">
+  <!-- Static content -->
+  <h2>{title}</h2>
+  <p>This is a reusable wrapper component. Below is the dynamic content:</p>
+</div>
+
+## start
+
+
+{content}
+
+
+## end
+
+<style>
+  .wrapper {
+    border: 1px solid var(--sl-color-gray-400);
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--sl-color-gray-100);
+    color: var(--sl-color-gray-800);
+  }
+
+  .dynamic-content {
+    margin-top: 1rem;
+  }
+</style>

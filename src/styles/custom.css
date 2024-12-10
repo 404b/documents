@@ -1,0 +1,119 @@
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #00273d;
+	--sl-color-accent: #0071a7;
+	--sl-color-accent-high: #92d1fe;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #e7eff2;
+	--sl-color-gray-2: #bac4c8;
+	--sl-color-gray-3: #7b8f96;
+	--sl-color-gray-4: #495c62;
+	--sl-color-gray-5: #2a3b41;
+	--sl-color-gray-6: #182a2f;
+	--sl-color-black: #121a1c;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #b0deff;
+	--sl-color-accent: #0073aa;
+	--sl-color-accent-high: #003653;
+	--sl-color-white: #121a1c;
+	--sl-color-gray-1: #182a2f;
+	--sl-color-gray-2: #2a3b41;
+	--sl-color-gray-3: #495c62;
+	--sl-color-gray-4: #7b8f96;
+	--sl-color-gray-5: #bac4c8;
+	--sl-color-gray-6: #e7eff2;
+	--sl-color-gray-7: #f3f7f9;
+	--sl-color-black: #ffffff;
+}
+
+:root {
+  --sl-font: 'barlow', serif;
+  --sl-content-width: 50rem;
+  --sl-text-5xl: 3.0rem;
+}
+h1, h2, h3, h4, h5, h6, span {
+  font-family: 'barlow', serif;
+  font-weight: 300;
+}
+p, strong, li, a, blockquote, code, pre, table, tr, td, th, input, textarea, button {
+  font-family: 'Alata', serif;
+}
+
+#_top{
+  font: 2.1rem/1.0 'barlow', serif !important;
+}
+.tagline{
+  /* font: large/1.4 'barlow', serif !important; */
+}
+
+ul > li {
+  padding: 0;
+}
+ul > li:hover{
+  background-color: var(--sl-color-gray-100);
+}
+li:hover{
+  border-left: 1px solid gray;
+}
+li{
+  border-left: 1px solid rgba(128, 128, 128, 0);
+}
+div.sidebar-pane .top-level > li + li{
+  margin-top: 0.3rem !important;
+}
+span.large{
+  font: 1.1rem/1.0 'barlow', serif;
+}
+
+.tab > a{
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif
+}
+.tab > a:hover{
+  background-color: rgba(137, 140, 140, 0.356);
+}
+.tab:where(.astro-esqgolmp) :where(.astro-esqgolmp)[role=tab][aria-selected=true]{
+  color: var(--sl-color-white);
+  border-bottom: 3px solid var(--sl-color-white);
+  border-color: var(--sl-color-text-accent);
+  font-weight: 600;
+  background-color: rgba(210, 216, 216, 0.121);
+}
+.tablist-wrapper:where(.astro-esqgolmp)~[role="tabpanel"]{
+  margin-top: 0;
+}
+
+[role='tabpanel'] {
+  margin: 0;
+  background-color: rgba(188, 193, 193, 0.172);
+  padding: 10px;
+}
+
+
+#starlight__sidebar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--sl-color-gray-400) var(--sl-color-gray-900); /* For Firefox */
+  scrollbar-gutter: stable;
+  overflow-y: auto; /* Makes the sidebar scrollable */
+}
+
+/* For Webkit Browsers (Chrome, Safari, etc.) */
+#starlight__sidebar::-webkit-scrollbar {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s; /* Smooth transition for visibility */
+}
+
+#starlight__sidebar::-webkit-scrollbar:hover {
+  opacity: 1; /* Show the scrollbar when hovered */
+}
+
+#starlight__sidebar::-webkit-scrollbar-track {
+  background: var(--sl-color-gray-900); /* Track color */
+}
+
+#starlight__sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--sl-color-gray-400); /* Thumb color */
+}
+

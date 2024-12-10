@@ -1,0 +1,12 @@
+---
+const { title, soon, imageSrc, altText, link, linkText } = Astro.props;
+---
+
+<a
+  href={link}
+  class="flex flex-col gap-1 items-center align-bottom border border-zinc-300/40 rounded-xl pt-5 p-3 backdrop-blur-md shadow-lg transition-all hover:shadow-md no-underline hover:border-teal-500/20 hover:bg-zinc-100/10 text-center"
+>
+  <img src={imageSrc} alt={altText} class="w-12 h-12 object-contain mb-2" />
+  <p class="text-xl uppercase font-light hover:text-teal-700 transition-colors">{title}</p>
+  <i class="text-sm uppercase font-light hover:text-teal-700 transition-colors">{soon}</i>
+</a>

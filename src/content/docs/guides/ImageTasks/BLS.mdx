@@ -1,0 +1,134 @@
+---
+title: BLS Captcha
+description: A guide in my new Starlight docs site.
+---
+
+import { Badge } from "@astrojs/starlight/components";
+import { Icon } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Code } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
+import { LinkButton } from "@astrojs/starlight/components";
+import { Steps } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import { LinkCard } from "@astrojs/starlight/components";
+import LinkButtons from "../../../../components/Promo.astro";
+
+### BLS (ImageToText/OCR) : Image Charecter/Digit Recognition
+
+with this `POST` request you can solve BLS Captcha image challenges.
+
+<LinkButtons />
+
+```
+POST https://api.nocaptchaai.com/createTask
+Host: api.nocaptchaai.com
+Content-Type: application/json
+```
+
+<LinkCard
+  title="Need Custom OCR model solutions (One time Fee Applied) ?"
+  href="mailto:ai@nocaptchaai.com"
+  description="EMAIL us for custom OCR model solutions. 90+ Percent accuracy. 99% Uptime. Cheaper"
+/>
+
+
+### Supported `module` List:
+```
+ "module": "common"
+ "module": "omgomg"
+ "module": "probot"
+ "module": "mtcap"
+ "module": "dell"
+ "module": "catch"
+ "module": "webde"
+ "module": "zefoy"
+ "module": "caixa"
+ "module": "oxcheats"
+ "module": "u1"
+ "module": "zoho"
+ "module": "protypers"
+ "module": "visa1"
+```
+
+# Request Format
+
+```json
+{
+  "clientKey": "YOUR_API_KEY", // Get API_KEY from https://NoCaptchaAi.com
+  "task": {
+    "type": "ImageToTextTask",
+    "module": "common", // "module_001", "module_002", ...
+    "body": "base64image" or ["base64image", "base64image"], // string(single) or array(multiple) of base64 of the main images
+    "websiteURL": "website URL", // source url to improve accuracy
+    "phrase": false,
+    "case": true,
+    "numeric": 0,
+    "math": false,
+    "minLength": 1,
+    "maxLength": 5,
+    "score": 0.8, // 0.8 ~ 1 expected matching score
+    "comment": "enter the text you see on the image"
+  },
+  "languagePool": "en"
+}
+```
+
+# Request Example
+
+```json
+{
+  "clientKey": "YOUR_API_KEY",
+  "task": {
+    "type": "ImageToTextTask",
+    "module": "bls", // or "morocco"
+    "images": [
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "/9j/4AAQSkZJRgABAQAAAQAB",
+      "min 9 images - max 54 images"
+    ],
+    "numeric": true,
+    "case": false,
+    "maxLength": 3
+  }
+}
+```
+
+# Response Example
+
+
+```json
+{
+    "errorCode": "",
+    "errorDescription": "",
+    "errorId": 0,
+    "solution": {
+        "text": [
+            "505",
+            "251",
+            "251",
+            "251",
+            "251",
+            "752",
+            "932",
+            "499",
+            "216"
+        ]
+    },
+    "status": "ready",
+    "taskId": ""
+}
+```
+
+<Aside>
+  <LinkCard
+    title="Need Custom OCR model solutions (One time Fee Applied) ?"
+    href="mailto:ai@nocaptchaai.com"
+    description="EMAIL us for custom OCR model solutions. 90+ Percent accuracy. 99% Uptime. Cheaper"
+  />
+</Aside>

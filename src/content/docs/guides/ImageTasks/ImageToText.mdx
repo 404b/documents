@@ -1,0 +1,108 @@
+---
+title: ImageToText
+description: A guide in my new Starlight docs site.
+---
+
+import { Badge } from "@astrojs/starlight/components";
+import { Icon } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Code } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
+import { LinkButton } from "@astrojs/starlight/components";
+import { Steps } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import { LinkCard } from "@astrojs/starlight/components";
+import LinkButtons from "../../../../components/Promo.astro";
+
+# ImageToText Task (OCR) : Image Charecter Recognition
+
+with this `POST` request you can solve Charecter Recognition image challenges.
+
+
+<LinkButtons />
+
+
+
+```
+POST https://api.nocaptchaai.com/createTask
+Host: api.nocaptchaai.com
+Content-Type: application/json
+```
+
+### Supported `module` List:
+```
+ "module": "common"
+ "module": "omgomg"
+ "module": "probot"
+ "module": "mtcap"
+ "module": "dell"
+ "module": "catch"
+ "module": "webde"
+ "module": "zefoy"
+ "module": "caixa"
+ "module": "oxcheats"
+ "module": "u1"
+ "module": "zoho"
+ "module": "protypers"
+ "module": "visa1"
+```
+
+<LinkCard
+  title="Need Custom OCR model solutions (One time Fee Applied) ?"
+  href="mailto:ai@nocaptchaai.com"
+  description="EMAIL us for custom OCR model solutions. 90+ Percent accuracy. 99% Uptime. Cheaper"
+/>
+
+
+# Request
+
+```json
+{
+  "clientKey": "YOUR_API_KEY", // Get API_KEY from https://NoCaptchaAi.com
+  "task": {
+    "type": "ImageToTextTask",
+    "module": "common", // "module_001", "module_002", ...
+    "body": "base64image" or ["base64image", "base64image"], // string(single) or array(multiple) of base64 of the main images
+    "websiteURL": "website URL", // source url to improve accuracy
+    "phrase": false,
+    "case": true,
+    "numeric": 0,
+    "math": false,
+    "minLength": 1,
+    "maxLength": 5,
+    "score": 0.8, // 0.8 ~ 1 expected matching score
+    "comment": "enter the text you see on the image"
+  },
+  "languagePool": "en"
+}
+```
+
+# Response
+
+```
+PATH : /getTaskResult
+API ENDPOINT:  https://api.nocaptchaai.com/getTaskResult
+```
+
+```json
+{
+  "errorId": 0,
+  "status": "ready",
+  "solution": {
+    "text": "hello world"
+  },
+  "cost": "0.00025",
+  "ip": "1.2.3.4",
+  "createTime": 1692808229,
+  "endTime": 1692808326,
+  "solveCount": 1
+}
+```
+
+<Aside>
+<LinkCard
+  title="Need Custom OCR model solutions (One time Fee Applied) ?"
+  href="mailto:ai@nocaptchaai.com"
+  description="EMAIL us for custom OCR model solutions. 90+ Percent accuracy. 99% Uptime. Cheaper"
+/>
+</Aside>

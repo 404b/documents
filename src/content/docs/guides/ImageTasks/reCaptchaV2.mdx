@@ -1,0 +1,39 @@
+---
+title: ReCaptcha V2
+description: ReCaptcha v2 Image Task `POST`
+---
+
+import { Badge } from "@astrojs/starlight/components";
+import { Icon } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Code } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
+import { LinkButton } from "@astrojs/starlight/components";
+import { Steps } from "@astrojs/starlight/components";
+import { exampleCode, requestCode } from "../../../../collections/recaptcha";
+import LinkButtons from "../../../../components/Promo.astro";
+import WrapperComponent from "../../../../components/Layout.astro";
+
+### ReCaptcha V2 Image Recognition
+
+with this `POST` request you can solve ReCaptcha V2 image challenges.
+
+<LinkButtons />
+
+```
+POST https://api.nocaptchaai.com/createTask
+Host: api.nocaptchaai.com
+Content-Type: application/json
+```
+
+# All Questions
+
+<Code code={exampleCode} lang="json" title={"All_Questions.json"} />
+
+# Request
+
+Coming soon...
+
+# Response
+
+Coming soon...

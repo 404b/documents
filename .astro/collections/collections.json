@@ -1,0 +1,47 @@
+{
+  "collections": [
+    {
+      "hasSchema": true,
+      "name": "docs"
+    }
+  ],
+  "entries": {
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/404.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/index.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/account/getbalance.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/blog/first.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/index.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/intro/extension.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/intro/intro.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/intro/task.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/legal/abuse.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/legal/privacy.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/legal/terms.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/notes/changelogs.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/awswaf.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/bls.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/capy.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/cloudflare.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/cybersierra.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/friendlycaptcha.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/geetest4.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/imagetotext.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/lemin.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/rotate.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/tencent.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/tiktok.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/turnstile.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/mtcaptcha.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/imagetasks/recaptchav2.mdx": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/speechtasks/awswaf.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/speechtasks/recaptchav2.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/visiontasks/obb.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/visiontasks/objectdetection.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/visiontasks/segmentation.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/visiontasks/slidecaptcha.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/visiontasks/temu.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/tokentasks/awswaf.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/tokentasks/recaptchav2.md": "docs",
+    "file:///home/pal/desktop/nocaptcha%20projects/github/documents/src/content/docs/guides/tokentasks/recaptchav3.md": "docs"
+  }
+}

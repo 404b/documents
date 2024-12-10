@@ -1,0 +1,51 @@
+{
+  "name": "starlight-docs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.4",
+    "@astrojs/mdx": "^4.0.0-beta.3",
+    "@astrojs/solid-js": "^4.4.4",
+    "@astrojs/starlight": "0.29.2",
+    "@astrojs/starlight-tailwind": "^2.0.3",
+    "@astrojs/tailwind": "6.0.0-beta.0",
+    "@fontsource/alata": "^5.1.1",
+    "@lorenzo_lewis/starlight-utils": "^0.2.0",
+    "@sentry/astro": "^8.40.0",
+    "@spotlightjs/astro": "^2.1.11",
+    "astro": "4.16.14",
+    "astro-breadcrumbs": "^3.2.0",
+    "lite-youtube-embed": "^0.3.3",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0",
+    "sharp": "^0.33.5",
+    "solid-js": "^1.9.3",
+    "starlight-blog": "^0.15.0",
+    "starlight-heading-badges": "^0.3.0",
+    "starlight-image-zoom": "^0.9.0",
+    "starlight-links-validator": "^0.13.2",
+    "starlight-obsidian": "^0.5.0",
+    "starlight-openapi": "^0.8.1",
+    "starlight-sidebar-topics": "^0.2.1",
+    "starlight-site-graph": "^0.1.9",
+    "starlight-theme-catppuccin": "^1.0.3",
+    "starlight-theme-obsidian": "^0.0.9",
+    "starlight-theme-rapide": "^0.2.1",
+    "starlight-versions": "^0.3.0",
+    "starlight-view-modes": "^0.7.0",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.7.2"
+  },
+  "trustedDependencies": [
+    "@sentry/cli",
+    "esbuild",
+    "sharp"
+  ]
+}

@@ -1,0 +1,626 @@
+---
+title: qCaptcha
+description: qCaptcha Image Task `POST`
+---
+
+import { Badge } from "@astrojs/starlight/components";
+import { Icon } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Code } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
+import { LinkButton } from "@astrojs/starlight/components";
+import { Steps } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import LinkButtons from "../../../../components/Promo.astro";
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+import binary_guided from "/public/demo/qcaptcha-guided/binary.avif";
+import binary_examples_guided from "/public/demo/qcaptcha-guided/binary-examples.avif";
+import area_select_guided from "/public/demo/qcaptcha-guided/area-select.avif";
+import area_select_examples_guided from "/public/demo/qcaptcha-guided/area-select-examples.avif";
+import drag_drop_guided from "/public/demo/qcaptcha-guided/drag-drop.avif";
+import drag_drop_network_guided from "/public/demo/qcaptcha-guided/drag-drop-network.avif";
+import multi_select_guided from "/public/demo/qcaptcha-guided/multi.avif";
+
+import binary from "/public/demo/qcaptcha/binary.png";
+import binary_example from "/public/demo/qcaptcha/binary-example.png";
+import area_select from "/public/demo/qcaptcha/area-select.png";
+import area_select_example from "/public/demo/qcaptcha/area-select.png";
+import drag_drop from "/public/demo/qcaptcha/drag-drop.png";
+import drag_drop_network from "/public/demo/qcaptcha/drag-drop-network.png";
+import multi_select from "/public/demo/qcaptcha/multi-select.png";
+
+
+
+### qCaptcha a Image Recognition Service
+
+with this `POST` request you can solve qCaptcha image challenges.
+
+<LinkButtons />
+
+---
+
+<Tabs>
+  <TabItem label="/CreateTask">
+
+```
+POST https://api.nocaptchaai.com/createTask
+Host: api.nocaptchaai.com
+Content-Type: application/json
+```
+
+# Request Format
+
+<Aside type="tip">
+  `question_type` for qCaptcha question/challenge type is optional but it helps
+  rare sites/cases
+</Aside>
+
+<Aside type="note">
+  Read more how to <a href="/intro/task">prepare qCaptcha Payload here 🚀</a>
+</Aside>
+
+```json
+{
+  "clientKey": "YOUR_API_KEY", // Get ApiKey @ NoCaptchaAi.com
+  "task": {
+    "type": "QCaptchaClassification",
+    "question_type": "binary", // "binary", "area_select", "drag_drop", "multi_select"
+    "screenshot": true, // "true" if queries images are screenshots else "false"
+    "queries": ["base64image", "base64image"], // base64 of the main images
+    "examples": ["base64image", "base64image"], // base64 of the examples images
+    "question": "Pleаse click, hold, and drаg all the missing pieсes to complete the image.",
+    "websiteURL": "website url", // Helps improve accuracy
+    "websiteKEY": "website key" // Helps improve accuracy
+  }
+}
+```
+## `question_type` variations gallery
+
+<Tabs>
+  <TabItem label="Guided">
+    <CardGrid>
+         <Card title="binary">
+          <Image src={binary_guided}  decoding="async" loading="lazy" alt="binary qCaptcha sample" />
+        </Card>
+        <Card title="binary">
+          <Image src={binary_examples_guided}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card>
+        <Card title="area_select">
+          <Image src={area_select_guided}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card> 
+        <Card title="area_select">
+          <Image src={area_select_examples_guided}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card>  
+       <Card title="drag_drop">
+          <Image src={drag_drop_guided}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card> 
+        <Card title="drag_drop">
+          <Image src={drag_drop_network_guided}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card>
+         <Card title="multi_select">
+          <Image src={multi_select_guided}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card> 
+    </CardGrid>
+  </TabItem>
+   <TabItem label="Normal">
+   <CardGrid>
+       <Card title="binary">
+          <Image src={binary}  decoding="async" loading="lazy" alt="binary qCaptcha sample" />
+        </Card>
+        <Card title="area_select">
+          <Image src={area_select}   decoding="async" loading="lazy" alt="area_select qCaptcha sample" />
+        </Card>  
+         <Card title="drag_drop">
+          <Image src={drag_drop}  decoding="async" loading="lazy" alt="drag_drop qCaptcha sample" />
+        </Card>  
+        <Card title="multi_select">
+          <Image src={multi_select}  decoding="async" loading="lazy" alt="multi_select qCaptcha sample" />
+        </Card>
+        </CardGrid>
+   </TabItem>
+</Tabs>
+
+
+## `POST`: `/createTask` Payload Samples
+
+<Tabs>
+  <TabItem label="binary">
+  
+
+```json
+{
+  "clientKey": "YOUR_API_KEY",
+  "task": {
+    "type": "QCaptchaClassification",
+    "screenshot": false, // "true" if queries images are screenshots else "false"
+    "queries": [
+      "/9j/4AAQSkZJRgABAQAAAQABAAD/2w", // base64 images of challenge
+      "/9j/4AAQSkZJRgABAQAAAQABAAD/2w", // base64 images of challenge
+      "/9j/4AAQSkZJRgABAQAAAQABAAD/2w", // base64 images of challenge
+      "... max 27 images"
+    ],
+    "examples": [
+      "/9j/4AAQSkZJRgABAQAAAQABAAD", // example images
+      "max 3 images"
+    ],
+    "question": "Click the images with the object present in the example image",
+    "question_type": "binary",
+    "websiteURL": "captcha-site.com"
+  }
+}
+```
+
+```json
+{
+  "errorId": 0,
+  "solution": {
+    "imageSize": [480, 500],
+    "objects": [true, false, false, true, false, true, true, true, true]
+  },
+  "status": "ready",
+  "target": "click the images with the object present in the example image",
+  "taskId": ""
+}
+```
+
+  </TabItem>
+  <TabItem label="area_select">
+
+{" "}
+
+
+```json
+{
+  "clientKey": "YOUR_API_KEY",
+  "task": {
+    "type": "QCaptchaClassification",
+    "screenshot": false, // "true" if queries images are screenshots else "false"
+    "queries": [
+      "/9j/4AAQSkZJRgABAQAAAQABAAD", // base64 images of challenge
+      "max 3 images"
+    ],
+    "examples": [
+      "/9j/4AAQSkZJRgABAQAAAQABAAD", // example images
+      "/9j/4AAQSkZJRgABAQAAAQABAAD", // example images
+      "/9j/4AAQSkZJRgABAQAAAQABAAD" // example images
+    ],
+    "question": "Please click on the entity present in the sample image.",
+    "question_type": "area_select",
+    "websiteURL": "captcha-site.com"
+  }
+}
+```
+
+```json
+{
+  "errorId": 0,
+  "solution": {
+    "box": [88, 108, 127, 147],
+    "imageSize": [480, 500]
+  },
+  "status": "ready",
+  "target": "b_entity present in the sample image",
+  "taskId": ""
+}
+```
+
+  </TabItem>
+  <TabItem label="drag_drop">
+
+
+```json
+{
+  "clientKey": "apikey",
+  "task": {
+    "type": "QCaptchaClassification",
+    "screenshot": false, // "true" if queries images are screenshots else "false"
+    "queries": [
+      "/9j/4AAQSkZJRgABAQAAAQAB" // base64 images of challenge
+    ],
+    "examples": [],
+    "question": "Pleаse click, hold, and drаg all the missing pieсes to complete the image.",
+    "websiteURL": "captcha-site.com",
+    "question_type": "drag_drop",
+    "websiteKEY": "b17bafa7-90bf-4070-9296-626796423086"
+  }
+}
+```
+
+#### Response Sample
+
+
+```json
+{
+  "answers": [
+    [
+      { "from": [416, 184], "to": [107, 172] },
+      { "from": [413, 293], "to": [107, 172] }
+    ]
+  ],
+  "imageSize": [[500, 430]],
+  "status": "ready",
+  "target": "bdd_please click hold and drag the missing pieces to complete the image"
+}
+```
+
+  </TabItem>
+  <TabItem label="multi_select">
+
+<Aside type="tip">Seen Less.</Aside>
+
+```json
+{
+  "clientKey": "apikey",
+  "task": {
+    "type": "QCaptchaClassification",
+    "screenshot": false, // "true" if queries images are screenshots else "false"
+    "queries": [
+      "/9j/4AAQSkZJRgABAQAAAQA", // base64 images of challenge
+      "/9j/4AAQSkZJRgABAQAAAQA", // base64 images of challenge
+      "/9j/4AAQSkZJRgABAQAAAQA" // base64 images of challenge
+    ],
+    "examples": [],
+    "question": "duck$penguin$shark$elephant",
+    "websiteURL": "captcha-site.com",
+    "question_type": "multi_select",
+    "websiteKEY": "b17bafa7-90bf-4070-9296-626796423086"
+  }
+}
+```
+
+  </TabItem>
+
+</Tabs>
+
+{/* LEGACY STARTS HERE */}
+
+</TabItem>
+<TabItem label="/Solve (Legacy)" >
+
+`Normal` / `Enterprise`
+
+`COST : 1 request = 1 challenge`
+
+```JSON
+PAID: POST https://pro.nocaptchaai.com/solve
+headers: {
+    "Content-Type": "application/json",
+    "apikey": "apikey"
+}
+```
+
+
+
+
+<Aside type="tip">
+ ## Examples required
+ `"examples": ["base64 0f the image", "base64 of the image..."]`
+1. most similar object to following reference shape
+2. object most similar to sketches
+3. following silhouette
+4. entities that can climb trees
+
+
+### Image Count / Each `POST` Request
+
+- `Grid -> (min 9 max 54)`
+- `Bbox -> (min 1 max 2)`
+- `Multi -> (min 1 max 2)`
+
+
+</Aside>
+
+<Tabs>
+  <TabItem label="GRID">
+  
+    ```GRID
+    {
+        "images" : {
+          "0": "/9j/AQSkZJRgABAQAAAQABAA...",
+          "8": "/9j/AQSkZJRgABAQAAAQABAA...",
+          "54": "/9j/AQSkZJRgABAQAAAQABAA..."
+        },
+        "target": "Please click each image containing a basketball",
+        "type": "grid", // challenge type
+        "method": "qcaptcha_base64",
+        "sitekey": "xx-xx-xx-xx", // qCaptcha sitekey
+        "site": "domain.com",
+        "ln": "en", // language/locale code
+        "examples": [
+            "/9j/4AAQSkZJRgAB/2Q=="  // image base64
+        ],
+    }
+    ```
+  </TabItem>
+  <TabItem label="BBOX">
+  ```BBOX
+    {
+      "images": {
+        "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+        },
+      "target": "Please click center of owl's head",
+      "method": "qcaptcha_base64",
+      "type": "bbox",
+      "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
+      "site": "nocaptchaai.com",
+      "ln": "en",
+      "examples":["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."] // Images
+    }
+  ```
+  </TabItem>
+  <TabItem label="MULTI">
+
+    ```MULTI
+    {
+        "images": {
+            "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+        },
+        "target": "Select the most accurate description of the image",
+        "method": "qcaptcha_base64",
+        "type": "multi",
+        "choices": [
+            "Living room",
+            "Bedroom",
+            "Kitchen"
+        ],
+        "sitekey": "ef7cabfd-741e-4643-855f-77308adedef5",
+        "site": "cryptowin.io",
+        "ln": "en",
+        "examples":["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."] // Images
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+
+
+
+## Send qCaptcha Task
+
+<Tabs>
+  <TabItem label="JavaScript">
+        ```JavaScript
+    const apikey = "apikey";
+    const proapi = "https://pro.nocaptchaai.com/solve";
+    const images = {
+        0:"/9j/33AQSkZJRgRX......" # base64 encoded image
+        ...
+    };
+    const base64_json = {
+        images,
+        target: "Please click each image containing a basketball",
+        // NEW
+        type: "grid", // "bbox" and "multi"
+        method: "qcaptcha_base64", // method name
+        sitekey: "xx-xx-xx-xx", // eg. b17a7-90bf-4070-9296-62679 from html page
+        site: "domain.com", // url of the captcha page
+        ln: "en", // "ru" for russian or  "ar" arabic | language of the captcha
+        examples:["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."] // Images
+
+    }
+
+    async function solve(images, target) {
+      const request = await fetch(proapi, {
+        method: "post",
+        headers: {
+          "Content-type": "application/json",
+          apikey: apikey,
+        },
+        body: JSON.stringify(base64_json),
+      }).then((response) => {
+          return  console.log(response.json());
+        });
+    }
+    ```
+  
+  </TabItem>
+  <TabItem label="Python">
+      ```Python
+      import requests
+      import json
+
+      apikey = "apikey"
+      proapi = "https://pro.nocaptchaai.com/solve"
+      images = {} # base64 `object {}` of images
+      base64_json = {
+          "images": images,
+          "target": "Please click each image containing a basketball",
+          "method": "qcaptcha_base64", # method name
+          "sitekey": "xx-xx-xx-xx", # eg. b17a7-90bf-4070-9296-62679 from html page
+          "site": "domain.com", # url of the captcha page
+          "ln": "en", # "ru" for russian or  "ar" arabic | language of the captcha
+          "examples": ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."] # For some tasks it required!
+      }
+
+      def solve(images, target):
+          headers = {
+              "Content-type": "application/json",
+              "apikey": apikey,
+          }
+          response = requests.post(proapi, headers=headers, data=json.dumps(base64_json))
+          return response.json()
+
+      result = solve(images, "Please click each image containing a basketball")
+      print(result)
+      ```
+  </TabItem>
+</Tabs>
+
+
+
+## Task Payload
+
+<Tabs>
+  <TabItem label="grid">
+  ```grid
+    {
+      "images": {
+        "0": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "1": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "2": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "3": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "4": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "5": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "6": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "7": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        "8": "/9j/4AAQSkZJRgABAQAAAQABAAD/",
+        },
+      "target": "Please click each image containing a basketball",
+      "type": "grid",
+      "method": "qcaptcha_base64",
+      "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
+      "site": "nocaptchaai.com",
+      "ln": "en",
+      "examples": ["/9j/4AAQSkZJRgAB/2Q=="] // example images
+    }
+  ```
+  </TabItem>
+  <TabItem label="bbox">
+
+    ```bbox
+    {
+      "images": {
+        "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+        }
+      "target": "Please click center of owl's head",
+      "method": "qcaptcha_base64",
+      "type": "bbox"
+      "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
+      "site": "nocaptchaai.com",
+      "ln": "en",
+      "examples": ["/9j/4AAQSkZJRgAB/2Q=="] // example images
+
+    }
+    ```
+  </TabItem>
+
+   <TabItem label="multi">
+   ```multi
+    {
+        "images": {
+            "0": "/9j/4AAQSkZJRgABAQAAAQAB"
+        },
+        "target": "Select the most accurate description of the image",
+        "method": "qcaptcha_base64",
+        "type": "multi",
+        "choices": [
+            "Living room",
+            "Bedroom",
+            "Kitchen"
+        ],
+        "sitekey": "ef7cabfd-741e-4643-855f-77308adedef5",
+        "site": "cryptowin.io",
+        "ln": "en",
+        "softid": "chromeExt_V1.7.5",
+        "examples": ["/9j/4AAQSkZJRgAB/2Q=="] // example images
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+
+
+
+
+# Task RESPONSE
+
+
+## Status : "solved"
+
+<Tabs>
+
+  <TabItem label="grid">
+
+```grid
+{
+    "answer": [],
+    "id": "hgrid_yx4ykHAL1MBvmFq3",
+    "message": "",
+    "processing_time": "0.02s",
+    "solution": [
+        0,
+        2,
+        5,
+        8
+    ],
+    "status": "solved",
+    "target": "lamp",
+    "url": "https://pro.nocaptchaai.com/status?id=hgrid_yx4ykHAL1MBvmFq3"
+}
+```
+  
+  </TabItem>
+  <TabItem label="bbox">
+  
+  ```bbox
+{
+    "answer": [
+        94,
+        189
+    ],
+    "answers": [
+        [
+            94,
+            189
+        ]
+    ],
+    "id": "hbbox_xfubTWQC_3aYrBsL",
+    "processing_time": "",
+    "solution": [],
+    "status": "solved"
+}
+```
+
+</TabItem>
+  <TabItem label="multi">
+
+```multi
+{
+    "answer": [
+        "Bedroom"
+    ],
+    "id": "hmulti_3Or0gpasE46RdB5d",
+    "message": "",
+    "processing_time": "0.01s",
+    "solution": [],
+    "status": "solved",
+    "target": "accurate description",
+    "url": "https://us-s1.nocaptchaai.com/status?id=hmulti_3Or0gpasE46RdB5d"
+}
+```
+  </TabItem>
+</Tabs>
+
+
+## Status : "new"
+
+
+<Steps>
+
+1. Received "new" response:
+
+    ```json
+    {
+      "answer": [],
+      "id": "hbbox_B4tZnUbqfnQrmb0n",
+      "processing_time": "0.0s",
+      "solution": [],
+      "status": "new",
+      "target": "b_bell",
+      "url": "https://*.nocaptchaai.com/status?id=hbbox_B4tZnUbqfnQrmb0n"
+    }
+    ```
+
+2. GET the result of the "new" task:
+
+   `GET` : `https://*.nocaptchaai.com/status?id=hbbox_B4tZnUbqfnQrmb0n`
+
+</Steps>
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,151 @@
+---
+title: Blazing ⚡ Fast Captcha Solver
+description: Automate your RPA workflows with NoCaptcha AI Captcha solving for Awswaf, lemin, reCAPTCHA v2, BLS, mtCaptcha, OCR and more
+template: splash
+hero:
+  tagline: Automate your RPA workflows with NoCaptcha AI Captcha solving for Awswaf, lemin, reCAPTCHA v2, BLS, mtCaptcha, OCR and more
+  image:
+    file: /src/assets/solutions2.svg
+  actions:
+    - text: Start
+      link: guides/
+      icon: right-arrow
+      variant: primary
+    - text: Download for Firefox
+      link: https://github.com/noCaptchaAi/firefox-addon/releases
+      icon: seti:firefox
+      variant: secondary
+    - text: Download for Chrome
+      link: https://github.com/noCaptchaAi/chrome-extension/releases
+      icon: heart
+      variant: secondary
+---
+
+import {
+  Icon,
+  LinkCard,
+  LinkButton,
+  Card,
+  CardGrid,
+  Aside,
+} from "@astrojs/starlight/components";
+import Customcard from "../../components/Customcard.astro";
+
+<div class="text-center">
+  <h1 class="text-6xl text-center ">Developer API Documents</h1>
+  <p class="text-xl">
+    List of available solutions.{" "}
+    <i class="text-center">[WIP Docs, Expect bugs]</i>{" "}
+  </p>
+</div>
+
+<section title="NoCaptchaAi Recognitions" class="flex flex-col items-center justify-center">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 w-full max-w-[95vw]">
+    
+
+    <Customcard
+      title="ReCaptcha"
+      imageSrc="icons/recaptcha.png"
+      altText="ReCaptcha"
+      link="/getting-started/"
+    />
+
+    <Customcard
+      title="BLS OCR Text"
+      imageSrc="icons/bls.png"
+      altText="BLS OCR"
+      link="/guides/imagetasks/bls/"
+    />
+    <div>
+     <Customcard
+      title="ReCaptcha v2 Image"
+      imageSrc="icons/ocr.svg"
+      altText="ReCaptcha v2"
+      link="/getting-started/"
+    />
+    </div>
+    <Customcard
+      title="GeeTest v4 Image"
+      imageSrc="icons/geetest.png"
+      altText="GeeTest v4"
+      link="/getting-started/"
+    />
+
+    <Customcard
+      title="ReCaptcha Image"
+      imageSrc="icons/awswaf.png"
+      altText="AWS WAF"
+      link="/guides/imagetasks/awswaf/"
+    />
+
+    <Customcard
+      title="Turnstile"
+      imageSrc="icons/turnstile.png"
+      altText="Cloudflare Turnstile"
+      link="/guides/imagetasks/turnstile/"
+    />
+     <Customcard
+      title="mtCAPTCHA"
+      imageSrc="icons/mtcaptcha.png"
+      altText="Cloudflare Turnstile"
+      link="/guides/imagetasks/mtcaptcha/"
+      soon="upcoming"
+    />
+    <Customcard
+      title="Lemin"
+      imageSrc="icons/mtcaptcha.png"
+      altText="Lemin"
+      link="/guides/imagetasks/lemin/"
+      soon="upcoming"
+    />
+    <Customcard
+      title="Tencent"
+      imageSrc="icons/mtcaptcha.png"
+      altText="Lemin"
+      link="/guides/imagetasks/Tencent/"
+      soon="upcoming"
+    />
+    <Customcard
+      title="Tiktok"
+      imageSrc="icons/mtcaptcha.png"
+      altText="Tiktok"
+      link="/guides/imagetasks/Tiktok/"
+      soon="upcoming"
+    />
+
+  </div>
+  Note: [We are not anyway affiliated with these services/companies, these logo's and Trademark's are of their respective brand/company/entities.]
+</section>
+
+<h1 class="text-5xl font-bold pb-5 text-center caret-rose-600 normal-case">
+  Why choose NoCaptchaAi?
+</h1>
+
+<Card> 
+<CardGrid stagger>
+  <Card title="Cross-Browser Solving" icon="laptop">
+    Our browser extension and mobile app are capable to handle for all major browsers and Captcha challenges. 🌐
+  </Card>
+  <Card title="Cost-effective" icon="heart">
+    Affordable pricing for businesses of all sizes, without compromising on quality. 💰
+  </Card>
+  
+  <Card title="Blazing fast" icon="rocket">
+    Solve captchas faster, means more time for you to do what you love. ⚡
+  </Card>
+
+<Card title="Reliable" icon="heart">
+  3+ years of experience and a proven track record. No compromise on quality and
+  service uptime 💪
+</Card>
+
+<Card title="Secure" icon="setting">
+  We take privacy seriously, Your data is safe with us, thanks to top-notch
+  encryption. 🔐
+</Card>
+
+<Card title="Scalable" icon="rocket">
+  500+ business trust us with their enterprise needs. 🚀
+</Card>
+</CardGrid>
+</Card>

@@ -1,0 +1,96 @@
+---
+title: Product Overview
+description: A guide in my new Starlight docs site.
+tableOfContents: false
+---
+
+import {
+  Icon,
+  LinkCard,
+  LinkButton,
+  Card,
+  CardGrid,
+  Aside,
+} from "@astrojs/starlight/components";
+import Customcard from "../../../components/Customcard.astro";
+
+<Aside type="tip">Experimental WIP Docs, Expect bugs.</Aside>
+
+  <section title="NoCaptchaAi Recognitions" class="flex flex-col items-center justify-center">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 w-full max-w-[95vw]">
+    
+    <Customcard
+      title="ReCaptcha"
+      imageSrc="/icons/recaptcha.png"
+      altText="ReCaptcha"
+      link="/getting-started/"
+    />
+
+    <Customcard
+      title="BLS OCR Text"
+      imageSrc="/icons/bls.png"
+      altText="BLS OCR"
+      link="/guides/imagetasks/bls/"
+    />
+    <div>
+     <Customcard
+      title="ReCaptcha v2 Image"
+      imageSrc="/icons/ocr.svg"
+      altText="ReCaptcha v2"
+      link="/getting-started/"
+    />
+    </div>
+    <Customcard
+      title="GeeTest v4 Image"
+      imageSrc="/icons/geetest.png"
+      altText="GeeTest v4"
+      link="/getting-started/"
+    />
+
+    <Customcard
+      title="ReCaptcha Image"
+      imageSrc="/icons/awswaf.png"
+      altText="AWS WAF"
+      link="/guides/imagetasks/awswaf/"
+    />
+
+    <Customcard
+      title="Turnstile"
+      imageSrc="/icons/turnstile.png"
+      altText="Cloudflare Turnstile"
+      link="/guides/imagetasks/turnstile/"
+    />
+     <Customcard
+      title="mtCAPTCHA"
+      imageSrc="/icons/mtcaptcha.png"
+      altText="Cloudflare Turnstile"
+      link="/guides/imagetasks/mtcaptcha/"
+      soon="upcoming"
+    />
+    <Customcard
+      title="Lemin"
+      imageSrc="/icons/mtcaptcha.png"
+      altText="Lemin"
+      link="/guides/imagetasks/lemin/"
+      soon="upcoming"
+    />
+    <Customcard
+      title="Tencent"
+      imageSrc="/icons/mtcaptcha.png"
+      altText="Lemin"
+      link="/guides/imagetasks/Tencent/"
+      soon="upcoming"
+    />
+    <Customcard
+      title="Tiktok"
+      imageSrc="/icons/mtcaptcha.png"
+      altText="Tiktok"
+      link="/guides/imagetasks/Tiktok/"
+      soon="upcoming"
+    />
+
+  </div>
+</section>
+
+-----
+Note: We are not anyway affiliated with these services/companies, these logo's and Trademark's are of their respective brand/company/entities.
